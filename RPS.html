@@ -1,0 +1,461 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Dangrek' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+     
+       <style>
+        *{
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+            body {
+  background-color: #8ccf5d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  margin: 0;
+}
+            .mob{
+                display:flex;
+                width: 800px;
+                height: 390px;
+                margin-top: 70px;
+               top: 70px;
+                font-family: roboto;
+    
+               justify-content: center;
+               
+                
+                border:2px rgb(241, 238, 238);
+                border-style: solid;
+                border-radius: 20px;
+                 
+                
+            }
+            .mob p{
+               margin-top: 17px;
+               margin-left: 20px;
+               margin-right: 270px;
+               text-transform: uppercase;
+               font-weight: 800;
+               
+               font-family: 'roboto';
+               
+    font-size: 27px;
+    color: white;
+    line-height: 1.4;
+    letter-spacing: 2.5px;
+    
+            }
+            .fab{
+                font-size: 14px;
+    color: #000000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+                background-color: white;
+                border-radius: 9px;
+                width: 139px;
+                height: 128px;
+                top:77px;
+                 padding-top: 7px;
+                text-align: center;
+                margin-top: 5px;
+                margin-left: 20px;
+                
+            }
+            .container{
+                position: absolute;
+              width: 90vw;
+            
+                /* width: 90vw;
+                height: 290vh; */
+                place-content: center;
+                display: grid;
+                
+            }
+           
+            .hand{
+                position:absolute;
+                width:110px;
+                height:110px;
+                padding: 50px;
+                border-radius: 50%;
+                border: 13px solid;
+                background-color: white;
+                display: flex;
+                align-items: center;   
+                justify-content: center;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            }
+           
+            .com{
+                position:absolute;
+                margin-top: 130px;
+                margin-left: 80px;
+                padding: 50px;
+                width:110px;
+                height:110px;
+                border-radius: 50%;
+                border: 13px solid;
+                background-color: white;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            } 
+            .rock {
+  top: 200px;
+  left: 492px;
+  border-color: #0077b6; /* Blue */
+}
+.scissors {
+  top: 200px;
+  left: 760.92px;
+  border-color: #9b59b6; /* Purple */
+  transform: rotate(-5.27deg);
+}
+.paper {
+  top: 400px;
+ left: 623px;
+  border-color: #f39c12; /* Orange */
+}
+            .rock img {
+  width: 80px;
+  height: 58.51px;
+
+
+}
+.scissors img {
+  width: 40px;
+  height: 53.5px;
+  rotate: -5.27;
+  
+}
+.paper img {
+  width: 72px;
+  height: 72px;
+  
+}
+                .scorevalue {
+                    font-family: Roboto;
+                   font-weight: 700;
+                   font-size: 68px;
+                   line-height: 100%;
+                    letter-spacing: 0%;
+                
+
+                }
+        
+            ul.custom-square-bullets {
+                list-style-type: square;
+                
+            
+            
+        }
+        li::marker {
+  color: #FFD600;
+  line-height: 3;
+}
+        
+        .box{
+            
+            position: absolute;
+                bottom: 30px;
+                right: 0;
+                
+        }
+        .buttonrules{
+            position: absolute;
+            right: 0;
+            
+            margin-right: 70px;
+            bottom: 10px;
+            background-color: #8CC461;
+            color:white;
+            font-family: roboto;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 100%;
+            letter-spacing: 3px;
+            border: 3px white;
+            border-style: solid;
+            border-radius: 9px;
+            
+            width: 112px;
+            height:33px;
+        
+        }
+        .buttonclose{
+            position: absolute;
+            
+            right:0;
+             top:0;
+             bottom: 10px;
+            margin-right: 29px;
+            
+            width: 50px;
+            height: 50px;
+            font-family: 'Dangrek';
+            font-weight: 400px;
+            font-size: 40px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            border: 5px white;
+            border-style: solid;
+            background-color: red;
+            border-radius: 100%;
+            color: white;
+            
+        }
+        .custom-square-bullets{
+            display: none;
+            width:270px;
+            height: 310x;
+            
+            margin-bottom:90px;
+            margin-right: 50px;
+            border-radius: 13px;
+            padding: 20px;
+            padding-bottom: 27px;
+            border: 7px white;
+            border-style: solid;
+            background-color: #004429;
+            color: white;
+            
+        }
+        .custom-square-bullets{
+               font-family: 'roboto';
+               font-weight: 400px;
+               font-size: 13px;
+               line-height: 1.2;
+               letter-spacing: 0%;
+        }
+        .heading{
+            font-family: roboto;
+            font-weight: 500;
+            font-size: 29px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+       /* .hand {
+  z-index: 1;  /*Make sure hands are on top of lines */
+  /* cursor: pointer;
+}  */
+
+
+        .line {
+    position: absolute;
+     height: 8px;
+     background: #333;
+     transform-origin: center;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+      justify-content: center;
+      align-items: center;
+}
+.rock-scissors {
+
+  top: 260px;
+    left: 600px;
+    width: 270px;
+    
+}
+
+/* Rock to Paper (angled) */
+.rock-paper {
+  /* top: 510px;
+  left: 640px; */
+  top:380px;
+  left: 530px;
+  width: 170px;
+  transform: rotate(58deg);
+}
+
+/* Scissors to Paper (angled) */
+.scissors-paper {
+  /* top: 500px;
+  left: 890px;*/
+  position: relative;
+  top:350px;
+   left:70px;
+  width: 170px; 
+  transform: rotate(122deg);
+}
+/* .winner,.win1,.play{
+  z-index: 1;
+} */
+.winner{
+  color:white;
+  padding-bottom: 4rem;
+  font-family: roboto;
+  font-weight: 800px;
+  font-size: 39px;
+  line-height: 100%;
+  letter-spacing: 10%;
+  width:183px;
+  height: 36px;
+}
+.win1{
+  color:white;
+  padding-bottom: 3rem;
+  font-family: roboto;
+  font-weight: 800px;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 10%;
+  width:168px;
+  height: 31px;
+}
+.play{
+  background:white;
+  letter-spacing: 3px;
+  right:40px;
+  color: black;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 15px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+}
+.game-con{
+  width:100%;
+  
+  display:flex;
+
+  align-items: center;
+  flex-direction:column;
+}
+.info{
+  width:700px;
+  font-size: 1.2rem;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user,.machine{
+  opacity: 1;
+  color: white;
+  font-family: roboto;
+}
+.win-modal{
+  display:none;
+}
+.win-modal{
+  opacity:0;
+  position: absolute;
+  width:100%;
+  height:100vh;
+  display: grid;
+  place-content: center;
+  top:0;
+}
+/* .win-modal::before{
+  position: absolute;
+  content: "";
+  opacity:0.6;
+  width:100%;
+  height:100%
+} */
+      </style>
+        
+    </head>
+    
+    <body>
+       
+        <div class="mob">
+            <p>ROCK
+                <br>
+                PAPER
+                <br>
+                SCISSORS
+            </p>
+            <div class="fab">
+                <div class="label">COMPUTER<br>SCORE</div>
+                <span class="scorevalue" id="computer-score">0</span>
+              </div>
+              
+              <div class="fab">
+                <div class="label">YOUR<br>SCORE</div>
+                <span class="scorevalue" id="player-score">0</span>
+              </div>
+        </div>
+
+        <div class="game-con">
+          <div class="info">
+            <p class="user">You Picked</p>
+          <p class="machine">Computer Picked</p></div>
+        </div>
+
+
+        <div class="win-modal">
+          <h1 class="winner">YOU WIN</h1>
+          <h2 class="win1">AGAINST PC</h2>
+          <button class="play">Play Again</button>
+        </div>
+
+        <div class="win-modal" id="lose-modal" style="display: none;">
+          <h1 class="winner">YOU LOST</h1>
+          <h2 class="win1">AGAINST PC</h2>
+          <button class="play" onclick="playAgain()">Play Again</button>
+        </div>
+        
+        <!-- Tie Modal -->
+        <div class="win-modal" id="tie-modal" style="display: none;">
+          <h1 class="winner">TIE UP</h1>
+          <h2 class="win1">TRY AGAIN</h2>
+          <button id="replay-button" class="play">Replay</button>
+        </div>
+
+
+
+        <div class="container">
+     
+          <div class="line rock-scissors"></div>
+          <div class="line rock-paper"></div>
+        <div class="line scissors-paper"></div>
+      
+        <div class="rock hand">
+        <img src="./image copy.png" alt="rock"></div>
+        <!-- <div class="scissors hand"><img src="./image.png" alt="scissors"></div> -->
+        <div class="paper hand"><img src="./image copy 2.png" alt="paper"></div>
+        <div class="scissors hand"><img src="./image.png" alt="scissors"></div>
+        </div>
+
+    <div class="rock com" >
+      <img src="./image copy.png" alt="rock"></div>
+      <!-- <div class="scissors com"><img src="./image.png" alt="scissors"></div> -->
+      <div class="paper com"><img src="./image copy 2.png" alt="paper"></div>
+      <div class="scissors com"><img src="./image.png" alt="scissors"></div>
+             <!-- <div class="line rock-scissors"></div>
+              <div class="line rock-paper"></div>
+            <div class="line scissors-paper"></div> -->
+           
+
+
+        <div class="box">
+            
+           
+            <ul class="custom-square-bullets">
+                <button class="buttonclose" onclick="closepopup()">X</button>
+                <h1 class="heading">GAME RULES</h1>
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper, scissors."</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                </li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+            <button class="buttonrules" onclick="handlegamerulesbox()">RULES</button>
+        </div>
+    
+        <script src="script.js"></script>  
+    </body>
+   
+</html>
